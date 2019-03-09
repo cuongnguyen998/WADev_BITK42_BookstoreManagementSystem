@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyNhaSach", "QuanLyNhaSach\QuanLyNhaSach.csproj", "{8868D29E-459B-4191-BB54-1EFDBF2C66CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNS_DataAccessLayer", "QLNS_DataAccessLayer\QLNS_DataAccessLayer.csproj", "{55CCD416-820B-4516-8B4A-6C2B2308C4FE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8868D29E-459B-4191-BB54-1EFDBF2C66CE} = {8868D29E-459B-4191-BB54-1EFDBF2C66CE}
+		{FC233AFC-C219-4369-8179-FB58F47F581A} = {FC233AFC-C219-4369-8179-FB58F47F581A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNS_BusinessAccessLayer", "QLNS_BusinessAccessLayer\QLNS_BusinessAccessLayer.csproj", "{FC233AFC-C219-4369-8179-FB58F47F581A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8868D29E-459B-4191-BB54-1EFDBF2C66CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8868D29E-459B-4191-BB54-1EFDBF2C66CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8868D29E-459B-4191-BB54-1EFDBF2C66CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8868D29E-459B-4191-BB54-1EFDBF2C66CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CCD416-820B-4516-8B4A-6C2B2308C4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CCD416-820B-4516-8B4A-6C2B2308C4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CCD416-820B-4516-8B4A-6C2B2308C4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CCD416-820B-4516-8B4A-6C2B2308C4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC233AFC-C219-4369-8179-FB58F47F581A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC233AFC-C219-4369-8179-FB58F47F581A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC233AFC-C219-4369-8179-FB58F47F581A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC233AFC-C219-4369-8179-FB58F47F581A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B45A13A-6C03-4FE1-9D8B-013FEB861FE5}
+	EndGlobalSection
+EndGlobal

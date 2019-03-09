@@ -1,0 +1,7 @@
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\bin\Debug\QLNS_DataAccessLayer.dll
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\bin\Debug\QLNS_DataAccessLayer.pdb
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\obj\Debug\QLNS_DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\obj\Debug\QLNS_DataAccessLayer.dll
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\obj\Debug\QLNS_DataAccessLayer.pdb
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\bin\Debug\QLNS_DataAccessLayer.dll.CodeAnalysisLog.xml
+E:\LTWin\QuanLyNhaSach\QLNS_DataAccessLayer\bin\Debug\QLNS_DataAccessLayer.dll.lastcodeanalysissucceeded

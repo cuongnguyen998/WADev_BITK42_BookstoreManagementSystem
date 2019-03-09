@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8868D29E-459B-4191-BB54-1EFDBF2C66CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyNhaSach</RootNamespace>
+    <AssemblyName>QuanLyNhaSach</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.BonusSkins.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Printing.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Sparkline.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Utils.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraBars.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraEditors.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="QLNS_BusinessAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QLNS_BusinessAccessLayer\bin\Debug\QLNS_BusinessAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="QLNS_DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QLNS_DataAccessLayer\bin\Debug\QLNS_DataAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountInfoForm.Designer.cs">
+      <DependentUpon>AccountInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BMSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BMSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormAccountSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAccountSetting.Designer.cs">
+      <DependentUpon>FormAccountSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBook.Designer.cs">
+      <DependentUpon>FormBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookCategory.Designer.cs">
+      <DependentUpon>FormBookCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInput.Designer.cs">
+      <DependentUpon>FormInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplier.Designer.cs">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AccountInfoForm.resx">
+      <DependentUpon>AccountInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAccountSetting.resx">
+      <DependentUpon>FormAccountSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBook.resx">
+      <DependentUpon>FormBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookCategory.resx">
+      <DependentUpon>FormBookCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInput.resx">
+      <DependentUpon>FormInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplier.resx">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="BMSDataSet.xsc">
+      <DependentUpon>BMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BMSDataSet.xss">
+      <DependentUpon>BMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BMSDataSet1.xsc">
+      <DependentUpon>BMSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BMSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BMSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BMSDataSet1.xss">
+      <DependentUpon>BMSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.AccountDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.BillDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.BillDetailDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.BookCategoryDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.BookMenuDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.BooksDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.CustomersDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.DataProvider.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.MenuDAO.datasource" />
+    <None Include="Properties\DataSources\QLNS_BusinessAccessLayer.SuppliersDAO.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Img\arrow-download-icon.png" />
+    <Content Include="Img\book.ico" />
+    <Content Include="Img\Books-icon.png" />
+    <Content Include="Img\Camping_icons-15-512.png" />
+    <Content Include="Img\Custom-Icon-Design-Flatastic-2-Truck.ico" />
+    <Content Include="Img\Custom-Icon-Design-Pretty-Office-2-Personal-information.ico" />
+    <Content Include="Img\Customer.png" />
+    <Content Include="Img\Dembsky-Mail-Mail-shelf.ico" />
+    <Content Include="Img\Dtafalonso-Android-Lollipop-Settings.ico" />
+    <Content Include="Img\Icons-Land-Vista-People-Groups-Meeting-Dark.ico" />
+    <Content Include="Img\Icons-Land-Vista-People-Office-Customer-Male-Light.ico" />
+    <Content Include="Img\img1.jpg" />
+    <Content Include="Img\img_548412.png" />
+    <Content Include="Img\inventory-maintenance-icon.png" />
+    <Content Include="Img\logout-icon.png" />
+    <Content Include="Img\mail-shelf-icon.png" />
+    <Content Include="Img\Oxygen-Icons.org-Oxygen-Categories-system-help.ico" />
+    <Content Include="Img\statistics-market-icon.png" />
+    <Content Include="Img\truck-icon.png" />
+    <Content Include="Img\user.png" />
+    <Content Include="Img\Wwalczyszyn-Android-Style-Honeycomb-Books.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
