@@ -48,7 +48,7 @@ namespace QLNS_BusinessAccessLayer
 
         public bool InsertInput(string inputId, DateTime dateInput, int idSupplier)
         {
-            string query = string.Format("INSERT INTO dbo.Inputs ( inputId, DateReceipt, idSupplier ) VALUES  ( N'{0}', {1}, {2} )", inputId, dateInput, idSupplier);
+            string query = string.Format("INSERT INTO dbo.Inputs ( inputId, DateReceipt, idSupplier ) VALUES  ( N'{0}', '{1}', {2} )", inputId, dateInput.ToString("MM-dd-yyyy"), idSupplier);
             int result = DataProvider.Instance.ExcuteNonQuery(query);
             return result > 0;
         }

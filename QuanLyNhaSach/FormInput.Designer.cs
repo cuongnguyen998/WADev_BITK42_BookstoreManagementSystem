@@ -32,9 +32,9 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.dtpkInputDate = new DevExpress.XtraEditors.DateEdit();
             this.txtbInputId = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.dtpkInputDate = new System.Windows.Forms.DateTimePicker();
             this.lkpSupplier = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -47,9 +47,12 @@
             this.nmAmount = new System.Windows.Forms.NumericUpDown();
             this.txtbBookName = new DevExpress.XtraEditors.TextEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.lkpCategory = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnNewInput = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.gctrlInput = new DevExpress.XtraGrid.GridControl();
             this.gvInput = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,10 +63,6 @@
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.lkpCategory = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpkInputDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpkInputDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbInputId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -74,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtbBookName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctrlInput)).BeginInit();
@@ -83,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCategory.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -116,18 +115,6 @@
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Ngày nhập:";
             // 
-            // dtpkInputDate
-            // 
-            this.dtpkInputDate.EditValue = null;
-            this.dtpkInputDate.Location = new System.Drawing.Point(107, 56);
-            this.dtpkInputDate.Name = "dtpkInputDate";
-            this.dtpkInputDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpkInputDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpkInputDate.Size = new System.Drawing.Size(137, 20);
-            this.dtpkInputDate.TabIndex = 2;
-            // 
             // txtbInputId
             // 
             this.txtbInputId.Location = new System.Drawing.Point(107, 27);
@@ -137,10 +124,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.dtpkInputDate);
             this.panelControl1.Controls.Add(this.lkpSupplier);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.txtbInputId);
-            this.panelControl1.Controls.Add(this.dtpkInputDate);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -149,12 +136,20 @@
             this.panelControl1.Size = new System.Drawing.Size(253, 120);
             this.panelControl1.TabIndex = 4;
             // 
+            // dtpkInputDate
+            // 
+            this.dtpkInputDate.Location = new System.Drawing.Point(107, 53);
+            this.dtpkInputDate.Name = "dtpkInputDate";
+            this.dtpkInputDate.Size = new System.Drawing.Size(137, 21);
+            this.dtpkInputDate.TabIndex = 4;
+            // 
             // lkpSupplier
             // 
             this.lkpSupplier.Location = new System.Drawing.Point(107, 82);
             this.lkpSupplier.Name = "lkpSupplier";
             this.lkpSupplier.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkpSupplier.Properties.NullText = "[Chọn 1 trường]";
             this.lkpSupplier.Size = new System.Drawing.Size(137, 20);
             this.lkpSupplier.TabIndex = 3;
             // 
@@ -244,6 +239,7 @@
             // 
             this.txtbBookName.Location = new System.Drawing.Point(81, 27);
             this.txtbBookName.Name = "txtbBookName";
+            this.txtbBookName.Properties.Leave += new System.EventHandler(this.txtbBookName_Properties_Leave);
             this.txtbBookName.Size = new System.Drawing.Size(137, 20);
             this.txtbBookName.TabIndex = 1;
             // 
@@ -265,6 +261,26 @@
             this.panelControl4.Size = new System.Drawing.Size(428, 120);
             this.panelControl4.TabIndex = 5;
             // 
+            // lkpCategory
+            // 
+            this.lkpCategory.Location = new System.Drawing.Point(81, 56);
+            this.lkpCategory.Name = "lkpCategory";
+            this.lkpCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkpCategory.Properties.NullText = "[Chọn 1 trường]";
+            this.lkpCategory.Size = new System.Drawing.Size(137, 20);
+            this.lkpCategory.TabIndex = 2;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(6, 57);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(63, 16);
+            this.labelControl12.TabIndex = 5;
+            this.labelControl12.Text = "Danh mục:";
+            // 
             // btnAdd
             // 
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
@@ -272,7 +288,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 38);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Nhập";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
@@ -287,6 +303,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnNewInput);
             this.panelControl2.Controls.Add(this.btnEdit);
             this.panelControl2.Controls.Add(this.btnDelete);
             this.panelControl2.Controls.Add(this.btnAdd);
@@ -294,6 +311,16 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(258, 120);
             this.panelControl2.TabIndex = 6;
+            // 
+            // btnNewInput
+            // 
+            this.btnNewInput.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewInput.ImageOptions.Image")));
+            this.btnNewInput.Location = new System.Drawing.Point(6, 73);
+            this.btnNewInput.Name = "btnNewInput";
+            this.btnNewInput.Size = new System.Drawing.Size(126, 38);
+            this.btnNewInput.TabIndex = 3;
+            this.btnNewInput.Text = "Phiếu nhập mới";
+            this.btnNewInput.Click += new System.EventHandler(this.btnNewInput_Click);
             // 
             // btnEdit
             // 
@@ -379,25 +406,6 @@
             this.labelControl11.TabIndex = 12;
             this.labelControl11.Text = "Chi tiết nhập:";
             // 
-            // lkpCategory
-            // 
-            this.lkpCategory.Location = new System.Drawing.Point(81, 56);
-            this.lkpCategory.Name = "lkpCategory";
-            this.lkpCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkpCategory.Size = new System.Drawing.Size(137, 20);
-            this.lkpCategory.TabIndex = 2;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(6, 57);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(63, 16);
-            this.labelControl12.TabIndex = 5;
-            this.labelControl12.Text = "Danh mục:";
-            // 
             // FormInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,8 +421,6 @@
             this.Name = "FormInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập kho";
-            ((System.ComponentModel.ISupportInitialize)(this.dtpkInputDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpkInputDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbInputId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -427,6 +433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctrlInput)).EndInit();
@@ -436,7 +443,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCategory.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,7 +453,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.DateEdit dtpkInputDate;
         private DevExpress.XtraEditors.TextEdit txtbInputId;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -477,5 +482,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LookUpEdit lkpCategory;
         private DevExpress.XtraEditors.LabelControl labelControl12;
+        private System.Windows.Forms.DateTimePicker dtpkInputDate;
+        private DevExpress.XtraEditors.SimpleButton btnNewInput;
     }
 }

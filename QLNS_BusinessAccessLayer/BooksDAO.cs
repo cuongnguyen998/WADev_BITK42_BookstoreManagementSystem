@@ -36,6 +36,29 @@ namespace QLNS_BusinessAccessLayer
             }
             return -1;
         }
+        
+        public int GetBookIdByDisplaynameAndSupplierId(string displayName, int idSupplier)
+        {
+            string query = string.Format("SELECT * FROM dbo.Books WHERE displayName = N'{0}' AND idSupplier = {1}", displayName, idSupplier);
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Books book = new Books(item);
+                return book.Id;
+            }
+            return -1;
+        }
+        public string GetBookCodeById(int id)
+        {
+            string query = string.Format("SELECT * FROM dbo.Books WHERE id = {0}", id);
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Books book = new Books(item);
+                return book.BookCode;
+            }
+            return null;
+        }
 
         public DataTable LoadListBook()
         {
@@ -65,9 +88,30 @@ namespace QLNS_BusinessAccessLayer
             return DataProvider.Instance.ExcuteQuery(query);
         }
 
-        public void InsertBook()
+        public bool InsertNewBook(string bookCode, string dislayName, int idCategory, int idSupplier, decimal unitPrice, int amount)
         {
+            string query = string.Format("INSERT dbo.Books( bookCode , displayName , idCategory , idSupplier , status , unitPrice , amount) VALUES  ( N'{0}' , N'{1}' , {2} , {3} , 1 , {4} , {5})", bookCode, dislayName, idCategory, idSupplier, unitPrice, amount);
+            int result = DataProvider.Instance.ExcuteNonQuery(query);
+            return result > 0;
+        }
 
+        public int GetCurrentAmountOfBook(int idBook)
+        {
+            Books book = null;
+            string query = "SELECT * FROM dbo.Books WHERE id = " + idBook;
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                book = new Books(item);
+                return book.Amount;
+            }
+            return 0;
+        }
+        public bool UpdateBookWhenInsertInputDetail(int idBook,int idSupplier, int amount, decimal unitPrice)
+        {
+            string query = string.Format("UPDATE dbo.Books SET amount = {0}, unitPrice = {1}, status = 1 WHERE id = {2} AND idSupplier = {3}", amount, unitPrice, idBook, idSupplier);
+            int result = DataProvider.Instance.ExcuteNonQuery(query);
+            return result > 0;
         }
     }
 }

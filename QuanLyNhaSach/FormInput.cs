@@ -23,7 +23,11 @@ namespace QuanLyNhaSach
         }
 
         #region Methods
-        
+        bool UpdateBookWhenInsertInputDetail(int idBook, int idSupplier, int amount, decimal unitPrice)
+        {
+            return BooksDAO.Instance.UpdateBookWhenInsertInputDetail(idBook, idSupplier, amount, unitPrice);
+            
+        }
         bool AddNewInputDetail(int idBook, int amount, string idInput, decimal inputPrice, decimal outputPrice)
         {
             return InputDetailDAO.Instance.InsertInputDetail(idBook, amount, idInput, outputPrice, inputPrice);
@@ -54,7 +58,7 @@ namespace QuanLyNhaSach
         void InputBinding()
         {
             txtbInputId.DataBindings.Add(new Binding("Text", gctrlInput.DataSource, "Mã PN", true, DataSourceUpdateMode.Never));
-            dtpkInputDate.DataBindings.Add(new Binding("EditValue", gctrlInput.DataSource, "Ngày nhập", true, DataSourceUpdateMode.Never));
+            dtpkInputDate.DataBindings.Add(new Binding("Value", gctrlInput.DataSource, "Ngày nhập", true, DataSourceUpdateMode.Never));
             lkpSupplier.DataBindings.Add(new Binding("EditValue", gctrlInput.DataSource, "Tên NCC", true, DataSourceUpdateMode.Never));
         }
         void LoadLookUpEditCategory(LookUpEdit lookUpEdit)
@@ -86,13 +90,26 @@ namespace QuanLyNhaSach
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int inputId = Convert.ToInt32(txtbInputId.Text);
-            DateTime dateInput = (DateTime)dtpkInputDate.EditValue;
+            string idInput = txtbInputId.Text;
             int idSupplier = Convert.ToInt32(lkpSupplier.EditValue);
-            int idBook = BooksDAO.Instance.GetBookIdByBookCode(txtbBookName.Text);
+            int idBook = BooksDAO.Instance.GetBookIdByDisplaynameAndSupplierId(txtbBookName.Text, Convert.ToInt32(lkpSupplier.EditValue));
             int amount = Convert.ToInt32(nmAmount.Value);
-            decimal inputPrice = Convert.ToDecimal(txtbInputPrice.Text);
-            decimal outputPrice = Convert.ToDecimal(txtbOutputPrice.Text);
+            int currentAmount = BooksDAO.Instance.GetCurrentAmountOfBook(idBook);
+            int inputPrice = Convert.ToInt32(txtbInputPrice.Text);
+            int outputPrice = Convert.ToInt32(txtbOutputPrice.Text);
+
+            bool isAddInputDetailSuccess = AddNewInputDetail(idBook, amount, idInput, inputPrice, outputPrice);
+            bool isUpdateBookSuccess = UpdateBookWhenInsertInputDetail(idBook, idSupplier, amount + currentAmount, outputPrice);
+
+            if (isAddInputDetailSuccess && isUpdateBookSuccess)
+            {
+                XtraMessageBox.Show("Thành công");
+                LoadInputDetailList(idInput);
+            }
+            else
+            {
+                XtraMessageBox.Show("Có lỗi xảy ra, vui lòng thử lại");
+            }
 
         }
 
@@ -128,7 +145,52 @@ namespace QuanLyNhaSach
                 XtraMessageBox.Show("Error " + ex.ToString());
             }
         }
+        private void btnNewInput_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inputId = txtbInputId.Text;
+                DateTime dateInput = dtpkInputDate.Value;
+                int idSupplier = Convert.ToInt32(lkpSupplier.EditValue);
+                int idBook = BooksDAO.Instance.GetBookIdByDisplaynameAndSupplierId(txtbBookName.Text, Convert.ToInt32(lkpSupplier.EditValue));
+                int amount = Convert.ToInt32(nmAmount.Value);
+                decimal inputPrice = Convert.ToDecimal(txtbInputPrice.Text);
+                decimal outputPrice = Convert.ToDecimal(txtbOutputPrice.Text);
+                int currentAmount = BooksDAO.Instance.GetCurrentAmountOfBook(idBook);
+
+
+                bool isInsertNewInputSuccess = AddNewInput(inputId, dateInput, idSupplier);
+                bool isInsertInputDetailSuccess = AddNewInputDetail(idBook, amount, inputId, inputPrice, outputPrice);
+                bool isUpdateBookInfoSuccess = UpdateBookWhenInsertInputDetail(idBook, idSupplier, currentAmount + amount, outputPrice);
+                if (isInsertNewInputSuccess && isInsertInputDetailSuccess && isUpdateBookInfoSuccess)
+                {
+                    XtraMessageBox.Show("Thành công");
+                    LoadInputList();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Có lỗi xảy ra, vui lòng thử lại");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error " + ex.ToString());
+            }
+        }
         #endregion
 
+        private void txtbBookName_Properties_Leave(object sender, EventArgs e)
+        {
+            int idBook = BooksDAO.Instance.GetBookIdByDisplaynameAndSupplierId(txtbBookName.Text, Convert.ToInt32(lkpSupplier.EditValue));
+            if (idBook == -1)
+            {
+                if (XtraMessageBox.Show("Sách chưa tồn tại, bạn có muốn thêm sách này không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    FormBook form = new FormBook();
+                    form.ShowDialog();
+                }
+            }
+        }
     }
 }

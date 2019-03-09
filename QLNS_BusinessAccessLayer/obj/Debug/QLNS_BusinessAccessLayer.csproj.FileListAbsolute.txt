@@ -7,3 +7,12 @@ E:\LTWin\QuanLyNhaSach\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLay
 E:\LTWin\QuanLyNhaSach\QLNS_BusinessAccessLayer\bin\Debug\QLNS_DataAccessLayer.dll
 E:\LTWin\QuanLyNhaSach\QLNS_BusinessAccessLayer\bin\Debug\QLNS_DataAccessLayer.pdb
 E:\LTWin\QuanLyNhaSach\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLayer.csproj.CopyComplete
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\bin\Debug\QLNS_BusinessAccessLayer.dll
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\bin\Debug\QLNS_BusinessAccessLayer.pdb
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\bin\Debug\QLNS_DataAccessLayer.dll
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\bin\Debug\QLNS_DataAccessLayer.pdb
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLayer.csprojAssemblyReference.cache
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLayer.csproj.CoreCompileInputs.cache
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLayer.csproj.CopyComplete
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLayer.dll
+E:\LTWin\WADev_BITK42_BookstoreManagementSystem\QLNS_BusinessAccessLayer\obj\Debug\QLNS_BusinessAccessLayer.pdb

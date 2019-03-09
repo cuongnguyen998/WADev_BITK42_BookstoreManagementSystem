@@ -27,6 +27,19 @@ namespace QuanLyNhaSach
         }
         #region Methods
 
+        void InsertBook(string bookCode, string displayName, int idCategory, int idSupplier, decimal unitPrice, int amount)
+        {
+            if (BooksDAO.Instance.InsertNewBook(bookCode, displayName, idCategory, idSupplier, unitPrice, amount))
+            {
+                XtraMessageBox.Show("Thành công");
+                LoadListBook();
+            }
+            else
+            {
+                XtraMessageBox.Show("Có lỗi xảy ra, vui lòng thử lại");
+            }
+        }
+
         void SearchBookByName(string keyword)
         {
             listBook.DataSource = BooksDAO.Instance.SearchBookByName(keyword);
@@ -103,7 +116,13 @@ namespace QuanLyNhaSach
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            string bookCode = txtBookCode.Text;
+            string displayName = txtbDisplayName.Text;
+            int idCategory = Convert.ToInt32(lkpCategory.EditValue);
+            int idSupplier = Convert.ToInt32(lkpSupplier.EditValue);
+            int amount = Convert.ToInt32(txtbAmount.Text);
+            decimal unitPrice = Convert.ToDecimal(txtbUnitPrice.Text);
+            InsertBook(bookCode, displayName, idCategory, idSupplier, unitPrice, amount);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
